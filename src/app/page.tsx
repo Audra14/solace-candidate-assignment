@@ -9,11 +9,11 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const [advocates, setAdvocates] = useState<AdvocateDisplay[]>([]);
   const [colDefs, setColDefs] = useState([
-    { field: "advocate" },
-    { field: "specialties" },
-    { field: "yearsOfExperience" },
-    { field: "city" },
-    { field: "phoneNumber" },
+    { field: "advocate", flex: 1 },
+    { field: "specialties", filter: true, flex: 2 },
+    { field: "yearsOfExperience", flex: 1 },
+    { field: "city", flex: 1 },
+    { field: "phoneNumber", flex: 1 },
   ]);
 
   function mapAdvocates(a: Advocate): AdvocateDisplay {
