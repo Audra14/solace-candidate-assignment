@@ -1,20 +1,25 @@
 "use client";
+
 import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
 import { Advocate, AdvocateDisplay } from "@/types";
-
 import { useEffect, useState } from "react";
+import { ColDef } from 'ag-grid-community';
 
 export default function Home() {
   const [advocates, setAdvocates] = useState<AdvocateDisplay[]>([]);
-  const [colDefs, setColDefs] = useState([
+
+  const colDefs = [
     { field: "advocate", flex: 1 },
     { field: "specialties", filter: true, flex: 2 },
     { field: "yearsOfExperience", flex: 1 },
     { field: "city", flex: 1 },
     { field: "phoneNumber", flex: 1 },
-  ]);
+  ]
+
+  const pageSize = 5
+  const totalRows = 15
 
   function mapAdvocates(a: Advocate): AdvocateDisplay {
     return {
@@ -28,7 +33,7 @@ export default function Home() {
 
   useEffect(() => {
     console.log("fetching advocates...");
-    fetch("/api/advocates?pageSize=10").then((response) => {
+    fetch(`/api/advocates?pageSize=${totalRows}`).then((response) => {
       response.json().then((jsonResponse) => {
         setAdvocates(jsonResponse.data.map(mapAdvocates));
       });
@@ -42,7 +47,10 @@ export default function Home() {
     >
       <AgGridReact
           rowData={advocates}
-          columnDefs={colDefs}
+          columnDefs={colDefs as ColDef<AdvocateDisplay>[]}
+          pagination={true}
+          paginationPageSize={pageSize}
+          paginationPageSizeSelector={[5, 10, 15]}
       />
     </div>
   )
