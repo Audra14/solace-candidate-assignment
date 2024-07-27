@@ -1,6 +1,4 @@
 import { Advocate } from "@/types";
-import db from "..";
-import { advocates } from "../schema";
 
 const specialties = [
   "Bipolar",
