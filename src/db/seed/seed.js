@@ -1,8 +1,8 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import dotenv from "dotenv"
-import { advocateData } from "./seed/advocates";
-import { advocates } from "./schema";
+import { advocateData } from "./advocates";
+import { advocates } from "../schema";
 
 dotenv.config()
 
