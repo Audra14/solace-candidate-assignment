@@ -9,12 +9,17 @@ export default function Home() {
 
   useEffect(() => {
     console.log("fetching advocates...");
-    fetch("/api/advocates?pageSize=10").then((response) => {
-      response.json().then((jsonResponse) => {
-        setAdvocates(jsonResponse.data);
-        setFilteredAdvocates(jsonResponse.data);
+    try {
+      fetch("/api/advocates?pageSize=10").then((response) => {
+        response.json().then((jsonResponse) => {
+          setAdvocates(jsonResponse.data);
+          setFilteredAdvocates(jsonResponse.data);
+        });
       });
-    });
+    } catch(e){
+      console.log("Failed to fetch advocates ", e)
+    }
+    
   }, []);
 
   const onChange = (e) => {
