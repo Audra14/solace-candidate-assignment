@@ -11,11 +11,11 @@ export default function Home() {
   const [advocates, setAdvocates] = useState<AdvocateDisplay[]>([]);
 
   const colDefs = [
-    { field: "advocate", flex: 1 },
+    { field: "advocate", filter: true, flex: 1 },
     { field: "specialties", filter: true, flex: 2 },
-    { field: "yearsOfExperience", flex: 1 },
-    { field: "city", flex: 1 },
-    { field: "phoneNumber", flex: 1 },
+    { field: "yearsOfExperience", filter: true, flex: 1 },
+    { field: "city", filter: true, flex: 1 },
+    { field: "phoneNumber", filter: true, flex: 1 },
   ]
 
   const pageSize = 5
