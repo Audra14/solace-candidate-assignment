@@ -1,4 +1,4 @@
-import db from "../../../db/index.js";
+import { db } from "../../../db/index";
 import { advocates } from "../../../db/schema";
 import { advocateData } from "../../../db/seed/advocates";
 

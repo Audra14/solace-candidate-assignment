@@ -33,11 +33,16 @@ export default function Home() {
 
   useEffect(() => {
     console.log("fetching advocates...");
-    fetch(`/api/advocates?pageSize=${totalRows}`).then((response) => {
-      response.json().then((jsonResponse) => {
-        setAdvocates(jsonResponse.data.map(mapAdvocates));
+    try {
+      fetch("/api/advocates?pageSize=10").then((response) => {
+        response.json().then((jsonResponse) => {
+          setAdvocates(jsonResponse.data);
+        });
       });
-    });
+    } catch(e){
+      console.log("Failed to fetch advocates ", e)
+    }
+    
   }, []);
 
   return (
