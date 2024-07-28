@@ -1,0 +1,5 @@
+Further to-do's on the data table: 
+- Understand the use case to make the table more specific to the user's needs and the columns more meaningful. For example, given that an advocate can have many specialties, I would recommend having a user select from a pre-defined list of specialties prior to viewing the resulting table. Additionally, I'd have the user input their location and then show the advocate's address rather than just the city. These changes alone would reduce the size of the UI and allow for a more specific, performant database query. The years of experience column seems like something that would be nice to mention when selecting the advocate to learn more, rather than a filtered value (would the user specifically filter for something like 6 years of experience? Or would they be ok with someone with 5-10 years?). 
+- Format the phone number string.
+- Including a header/footer would be nice to keep the experience consistent among other pages on the site. 
+- Would love to do more styling on the table! 
