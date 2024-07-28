@@ -1,8 +1,8 @@
 "use client";
 
-import { AgGridReact } from 'ag-grid-react'; // React Data Grid Component
-import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
-import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
+import { AgGridReact } from 'ag-grid-react'; 
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
 import { Advocate, AdvocateDisplay } from "@/types";
 import { useEffect, useState } from "react";
 import { ColDef } from 'ag-grid-community';
@@ -32,11 +32,10 @@ export default function Home() {
   }
 
   useEffect(() => {
-    console.log("fetching advocates...");
     try {
-      fetch("/api/advocates?pageSize=10").then((response) => {
+      fetch(`/api/advocates?pageSize=${totalRows}`).then((response) => {
         response.json().then((jsonResponse) => {
-          setAdvocates(jsonResponse.data);
+          setAdvocates(jsonResponse.data.map(mapAdvocates));
         });
       });
     } catch(e){
