@@ -25,10 +25,17 @@ The app is configured to return a default list of advocates. This will allow you
 ```bash
 docker compose up -d
 ```
+or 
+
+`npm run docker:compose`
 
 2. Create a `solaceassignment` database.
 
+`npm run generate`
+
 3. Push migration to the database
+
+`npm run migrate`
 
 ```bash
 npx drizzle-kit push
