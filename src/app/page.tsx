@@ -46,8 +46,8 @@ export default function Home() {
 
   return (
     <div
-      className="ag-theme-quartz" // applying the Data Grid theme
-      style={{ height: 500 }} // the Data Grid will fill the size of the parent container
+      className="ag-theme-quartz" 
+      style={{ height: 500 }}
     >
       <AgGridReact
           rowData={advocates}
