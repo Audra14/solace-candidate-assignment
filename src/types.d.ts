@@ -1,5 +1,3 @@
-import { advocates } from "./db/schema"
-
 export type Advocate = {
     firstName: string, 
     lastName: string, 

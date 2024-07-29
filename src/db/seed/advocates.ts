@@ -1,4 +1,4 @@
-import { Advocate } from "@/types";
+import { Advocate } from "../../types";
 
 const specialties = [
   "Bipolar",

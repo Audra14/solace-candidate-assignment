@@ -1,9 +1,10 @@
 "use client";
 
+import React from 'react'
 import { AgGridReact } from 'ag-grid-react'; 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-quartz.css";
-import { Advocate, AdvocateDisplay } from "@/types";
+import { Advocate, AdvocateDisplay } from "../types";
 import { useEffect, useState } from "react";
 import { ColDef } from 'ag-grid-community';
 
