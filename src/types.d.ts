@@ -1,4 +1,6 @@
-export interface Advocate {
+import { advocates } from "./db/schema"
+
+export type Advocate = {
     firstName: string, 
     lastName: string, 
     city: string, 
@@ -8,7 +10,7 @@ export interface Advocate {
     phoneNumber: string
 }
 
-export interface AdvocateDisplay {
+export type AdvocateDisplay = {
     advocate: string, 
     city: string, 
     specialties: string[], 
